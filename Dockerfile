@@ -1,4 +1,4 @@
-FROM n00dl3-base:lastest
+FROM n00dl3/base:lastest
 
 MAINTAINER n00dl3
 

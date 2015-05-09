@@ -1,6 +1,8 @@
-FROM n00dl3/base:latest
+FROM phusion/baseimage:latest
 
 MAINTAINER n00dl3
+
+CMD ["/sbin/my_init"]
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y transmission-daemon
 
@@ -20,4 +22,4 @@ EXPOSE 12345
 
 USER debian-transmission
 
-CMD ["/run_transmission.sh"]
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

@@ -7,7 +7,9 @@ CMD ["/sbin/my_init"]
 RUN apt-get update && apt-get upgrade -y && apt-get install -y transmission-daemon
 
 ADD files/transmission-daemon /etc/transmission-daemon
-ADD files/run_transmission.sh /run_transmission.sh
+RUN mkdir -p /etc/service/transmission
+ADD files/run_transmission.sh /etc/service/transmission/run
+RUN chmod +x /etc/service/transmission/run
 
 RUN mkdir -p /var/lib/transmission-daemon/incomplete && \
     mkdir -p /var/lib/transmission-daemon/downloads && \

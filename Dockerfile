@@ -20,6 +20,6 @@ VOLUME ["/var/lib/transmission-daemon/downloads"]
 VOLUME ["/var/lib/transmission-daemon/incomplete"]
 
 EXPOSE 9091
-EXPOSE 12345
+EXPOSE 51000
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

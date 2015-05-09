@@ -8,7 +8,7 @@ Transmission Daemon Docker Container using [nginx-proxy](https://github.com/jwil
 
 ```
 docker run -d --name transmission \
--e VIRTUAL_HOST=transmission.n00dl3.ovh \
+-e VIRTUAL_HOST=subdomain.domain.com \
 -e VIRTUAL_PORT=9091 \
 -p 51000:51000 -p 51000:51000/udp \
 -v /local/dir/downloads:/var/lib/transmission-daemon/downloads \

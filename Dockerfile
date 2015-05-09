@@ -20,6 +20,4 @@ VOLUME ["/var/lib/transmission-daemon/incomplete"]
 EXPOSE 9091
 EXPOSE 12345
 
-USER debian-transmission
-
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

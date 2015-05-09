@@ -48,7 +48,7 @@
     "rpc-url": "/transmission/",
     "rpc-username": "transmission",
     "rpc-whitelist": "nginx-proxy",
-    "rpc-whitelist-enabled": false,
+    "rpc-whitelist-enabled": true,
     "scrape-paused-torrents-enabled": true,
     "script-torrent-done-enabled": false,
     "script-torrent-done-filename": "",

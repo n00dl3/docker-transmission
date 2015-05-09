@@ -4,15 +4,14 @@ Based on [elventear/docker-transmission](https://github.com/elventear/docker-tra
 
 Transmission Daemon Docker Container using [nginx-proxy](https://github.com/jwilder/nginx-proxy)
 
-Application container, don't forget to link to the nginx-proxy and to specify the local directory for the downloads:
+**WARNING** this container is not secured, no ip whitelist, no auth, the auth is made on the reverse proxy:
 
 ```
-    docker run -d --name transmission \
-    -e VIRTUAL_HOST=subdomain.example.com \
-    -e VIRTUAL_PORT=9091 \
-    -p 12345:12345 -p 12345:12345/udp \
-    --link nginx-proxy:nginx-proxy \
-    -v /local/dir/downloads:/var/lib/transmission-daemon/downloads \
-    -v /local/dir/incomplete:/var/lib/transmission-daemon/incomplete \
-    n00dl3/transmission
+docker run -d --name transmission \
+-e VIRTUAL_HOST=transmission.n00dl3.ovh \
+-e VIRTUAL_PORT=9091 \
+-p 51000:51000 -p 51000:51000/udp \
+-v /local/dir/downloads:/var/lib/transmission-daemon/downloads \
+-v /local/dir/incomplete:/var/lib/transmission-daemon/incomplete \
+n00dl3/transmission
 ```
